@@ -55,11 +55,13 @@ class LoginFragment : Fragment() {
 
         // Observe the login response
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer { response ->
+            if (response != null) {
             // Handle successful login
             Toast.makeText(requireContext(), "Login successful: ${response.keypass}", Toast.LENGTH_SHORT).show()
             // Navigate to the DashboardFragment
             findNavController().navigate(R.id.action_loginFragment_to_HomeScreenFragment)
-        })
+        }
+            })
 
         viewModel.loginError.observe(viewLifecycleOwner, Observer { error ->
             // Handle login error
