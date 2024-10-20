@@ -35,11 +35,11 @@ class DetailFragment : Fragment() {
         val detailItem = args.detail
 
         // Display the detailItem information on this screen
-        view.findViewById<TextView>(R.id.destinationText).text = " Destination: ${detailItem.destination}"
-        view.findViewById<TextView>(R.id.CountryTextView).text = " Country: ${detailItem.country}"
-        view.findViewById<TextView>(R.id.bestSeasonText).text = " Best Season: ${detailItem.bestSeason}"
-        view.findViewById<TextView>(R.id.popularAttractionText).text = " Popular Attraction: ${detailItem.popularAttraction}"
-        view.findViewById<TextView>(R.id.descriptionText).text = " Description: ${detailItem.description}"
+        view.findViewById<TextView>(R.id.destinationText).text = " Destination:  ${detailItem.destination}"
+        view.findViewById<TextView>(R.id.CountryTextView).text = " Country:  ${detailItem.country}"
+        view.findViewById<TextView>(R.id.bestSeasonText).text = " Best Season:  ${detailItem.bestSeason}"
+        view.findViewById<TextView>(R.id.popularAttractionText).text = " Popular Attraction:  ${detailItem.popularAttraction}"
+        view.findViewById<TextView>(R.id.descriptionText).text = " Description:  ${detailItem.description}"
 
 
         }

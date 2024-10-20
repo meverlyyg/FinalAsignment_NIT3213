@@ -21,7 +21,7 @@ import javax.inject.Inject
 class HomeScreenViewModel @Inject constructor(private val repository: RestfulApiDevRepositoryClass): ViewModel() {
 
     //use the MutableStateFlow constructor, specifying the initial value and data type.
-    val greetingText = MutableStateFlow("Hello Class")
+    val greetingText = MutableStateFlow("Hello Ayman")
     val apiResponseObjects = MutableStateFlow<List<DetailItem>>(listOf())
 
     init {
@@ -33,7 +33,7 @@ class HomeScreenViewModel @Inject constructor(private val repository: RestfulApi
         viewModelScope.launch {
             val result = repository.getAllObjectsData()
             delay(1000)
-            updateGreetingTextState("Api has responded with the following items")
+            updateGreetingTextState("Travel")
             delay(1000)
 
             // Extract entities from the TravelResponse and update the list of DetailItems
