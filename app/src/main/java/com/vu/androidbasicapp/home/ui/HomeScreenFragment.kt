@@ -13,7 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
-import com.vu.androidbasicapp.home.data.ResponseItem
+import com.vu.androidbasicapp.home.data.DetailItem
 import com.vu.androidbasicapp.home.ui.recyclerview.MyRecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,7 +24,7 @@ class HomeScreenFragment : Fragment() {
 
     // to let the Android Jetpack libraries’ viewModels() function to create a lifecycle-aware viewmodel.
     private val viewModel: HomeScreenViewModel by viewModels()
-    private lateinit var navigationFunctionLambda: (ResponseItem) -> Unit
+    private lateinit var navigationFunctionLambda: (DetailItem) -> Unit
     //
     private lateinit var recyclerViewAdapter: MyRecyclerViewAdapter
 
@@ -41,7 +41,7 @@ class HomeScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Pass the argument in the starting fragment
-        navigationFunctionLambda = { findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
+        navigationFunctionLambda = {findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
         recyclerViewAdapter = MyRecyclerViewAdapter(navigationFunction = navigationFunctionLambda)
 
         // LifecycleMode : Use lifecycleScope when you want coroutines to be tied to the lifecycle of an Activity or Fragment.
@@ -63,8 +63,8 @@ class HomeScreenFragment : Fragment() {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
 
-                viewModel.apiResponseObjects.collect { listOfResponseItems ->
-                    recyclerViewAdapter.setData(listOfResponseItems)
+                viewModel.apiResponseObjects.collect { listOfDetailItems ->
+                    recyclerViewAdapter.setData(listOfDetailItems)
                 }
             }
         }

@@ -1,19 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DetailFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    style="?attr/materialCardViewElevatedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="#c7ecee">
 
-    <TextView
-        android:id="@+id/screenTitle"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/dashboard_screen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/destinationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Destination: " />
+
+        <TextView
+            android:id="@+id/CountryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/destinationText"
+            app:layout_constraintTop_toBottomOf="@+id/destinationText"
+            tools:text="Country:" />
+
+        <TextView
+            android:id="@+id/bestSeasonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/CountryTextView"
+            app:layout_constraintTop_toBottomOf="@+id/CountryTextView"
+            tools:text="Best Season: " />
+
+        <TextView
+            android:id="@+id/popularAttractionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/bestSeasonText"
+            app:layout_constraintTop_toBottomOf="@+id/bestSeasonText"
+            tools:text="Popular Attraction: " />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/popularAttractionText"
+            app:layout_constraintTop_toBottomOf="@+id/popularAttractionText"
+            tools:text="Description: " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

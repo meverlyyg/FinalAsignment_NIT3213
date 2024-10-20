@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class RestfulApiDevRetrofitClient @Inject constructor() {
 
-    private val BASE_URL = "https://api.restful-api.dev/"
+    private val BASE_URL = "https://nit3213-api-h2b3-latest.onrender.com/"
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

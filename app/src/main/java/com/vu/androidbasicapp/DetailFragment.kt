@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     // Receive the Arguments in from the fragment
-    private val arguments: DetailFragmentArgs by navArgs()
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +31,15 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.screenTitle).text = arguments.detail.toString()
+        val detailItem = args.detail
+
+        // Display the detailItem information on this screen
+        view.findViewById<TextView>(R.id.destinationText).text = detailItem.destination
+        view.findViewById<TextView>(R.id.CountryTextView).text = detailItem.country
+        view.findViewById<TextView>(R.id.bestSeasonText).text = detailItem.bestSeason
+        view.findViewById<TextView>(R.id.popularAttractionText).text = detailItem.popularAttraction
+        view.findViewById<TextView>(R.id.descriptionText).text = detailItem.description
     }
 }
+
+

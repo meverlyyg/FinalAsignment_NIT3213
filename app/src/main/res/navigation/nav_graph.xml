@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="detail"
-            app:argType="com.vu.androidbasicapp.home.data.ResponseItem" />
+            app:argType="com.vu.androidbasicapp.home.data.DetailItem" />
         <!-- Safe-args: pass the data to destination fragment-->
     </fragment>
     <fragment

@@ -3,10 +3,9 @@ package com.vu.androidbasicapp.home.ui
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vu.androidbasicapp.home.data.AddObjectRequest
 import com.vu.androidbasicapp.home.data.RestfulApiDevRepositoryClass
-import com.vu.androidbasicapp.home.data.ResponseItem
-import com.vu.androidbasicapp.home.network.RestfulApiDevRetrofitClient
+import com.vu.androidbasicapp.home.data.DetailItem
+import com.vu.androidbasicapp.home.data.TravelResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,7 +22,7 @@ class HomeScreenViewModel @Inject constructor(private val repository: RestfulApi
 
     //use the MutableStateFlow constructor, specifying the initial value and data type.
     val greetingText = MutableStateFlow("Hello Class")
-    val apiResponseObjects = MutableStateFlow<List<ResponseItem>>(listOf())
+    val apiResponseObjects = MutableStateFlow<List<DetailItem>>(listOf())
 
     init {
         Log.d("nit3213", "HomeScreenViewModel ViewModel injected ")
@@ -36,9 +35,12 @@ class HomeScreenViewModel @Inject constructor(private val repository: RestfulApi
             delay(1000)
             updateGreetingTextState("Api has responded with the following items")
             delay(1000)
-            apiResponseObjects.value = result
+
+            // Extract entities from the TravelResponse and update the list of DetailItems
+            apiResponseObjects.value = result.entities
         }
     }
+
 
     private fun updateGreetingTextState(value: String) {
         greetingText.value = value

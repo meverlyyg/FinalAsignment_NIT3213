@@ -5,13 +5,16 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
-import com.vu.androidbasicapp.home.data.ResponseItem
+import com.vu.androidbasicapp.home.data.DetailItem
 
-class ResponseItemViewHolder(view: View,private val navigationFunction: (ResponseItem) -> Unit) : RecyclerView.ViewHolder(view) {
+class ResponseItemViewHolder(view: View,private val navigationFunction: (DetailItem) -> Unit) : RecyclerView.ViewHolder(view) {
 
-    private val name: TextView = view.findViewById(R.id.itemNametext)
-    private val id: TextView = view.findViewById(R.id.itemIdText)
-    private val details: TextView = view.findViewById(R.id.detailsText)
+    private val destination: TextView = view.findViewById(R.id.itemDestinationtext)
+    private val country: TextView = view.findViewById(R.id.CountryText)
+    private val bestSeason: TextView = view.findViewById(R.id.bestSeasonText1)
+    private val popularAttractionText: TextView = view.findViewById(R.id.popularAttractionText1)
+
+    private val description: TextView = view.findViewById(R.id.descriptionText)
     private val button: Button = view.findViewById(R.id.navigationButton)
 
 //    Inflation: When the onCreateViewHolder method is called in the adapter, it inflates the item_layout.xml file to create a
@@ -21,17 +24,24 @@ class ResponseItemViewHolder(view: View,private val navigationFunction: (Respons
 //    Data Binding: When the bind method is called, the textView is updated with the data passed to the method. This ensures
 //    that the correct data is displayed in the TextView for each item in the RecyclerView.
 
-    fun bind(item: ResponseItem) {
-        name.text = item.objectName
-        id.text = "Id: " + item.id
-        val showDetails = if (item.dataSection.isNullOrEmpty()) View.INVISIBLE else View.VISIBLE
-        details.visibility = showDetails
-        button.visibility = showDetails
+    fun bind(item: DetailItem, isDetailScreen: Boolean) {
+        destination.text = item.destination
+        country.text = "Country: ${item.country}"
+        bestSeason.text = item.bestSeason
+        popularAttractionText.text = item.popularAttraction
 
-        if (showDetails == View.VISIBLE) {
-            button.setOnClickListener {
-                navigationFunction(item)
-            }
+        // Show description and button only in detail screen
+        if (isDetailScreen) {
+            description.text = item.description
+            description.visibility = View.VISIBLE
+            button.visibility = View.VISIBLE
+            button.setOnClickListener { navigationFunction(item) }
+        } else {
+            // Hide description and button in dashboard
+            description.visibility = View.GONE
+            button.visibility = View.VISIBLE // Show button in the home screen
+            button.setOnClickListener { navigationFunction(item) } // Navigate to details
         }
+
     }
 }
