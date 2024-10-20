@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
 import com.vu.androidbasicapp.home.data.ResponseItem
 
+//designed to be flexible and reusable, allowing it to display any list of items of type YourDataType in a RecyclerView.
 class MyRecyclerViewAdapter(private val dataList: MutableList<ResponseItem> = mutableListOf(), private val navigationFunction: (ResponseItem) -> Unit) : RecyclerView.Adapter<ResponseItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResponseItemViewHolder {
@@ -18,6 +19,9 @@ class MyRecyclerViewAdapter(private val dataList: MutableList<ResponseItem> = mu
     }
 
     override fun getItemCount() = dataList.size
+
+    // updateData method,ensures that the UI is refreshed whenever the data changes, making it a crucial part of dynamic and
+    //responsive Android applications.
 
     fun setData(newDataList: List<ResponseItem>) {
         dataList.clear()

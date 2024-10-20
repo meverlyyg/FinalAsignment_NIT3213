@@ -14,6 +14,7 @@
             android:id="@+id/action_homeScreenFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.vu.androidbasicapp.DetailFragment"
@@ -22,6 +23,7 @@
         <argument
             android:name="detail"
             app:argType="com.vu.androidbasicapp.home.data.ResponseItem" />
+        <!-- Safe-args: pass the data to destination fragment-->
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -29,3 +31,4 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
+

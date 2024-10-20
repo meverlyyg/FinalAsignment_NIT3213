@@ -20,6 +20,8 @@ class RestfulApiDevRetrofitClient @Inject constructor() {
         .addInterceptor(logging)
         .build()
 
+    //Retrofit can automatically convert JSON responses into Java objects (and vice versa) using
+    //converters like Gson or Moshi. This eliminates the need for manual parsing
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
     private val retrofit = Retrofit.Builder()

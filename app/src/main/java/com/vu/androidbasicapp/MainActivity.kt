@@ -8,7 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import dagger.hilt.android.AndroidEntryPoint
 
-
+// @AndroidEntryPoint. This annotation is used to mark Android components (e.g., Activities, Fragments, Services, etc.) where you want to inject dependencies. You must annotate every
+//Android component that will receive injected dependencies.
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

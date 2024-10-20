@@ -22,8 +22,10 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class HomeScreenFragment : Fragment() {
 
+    // to let the Android Jetpack libraries’ viewModels() function to create a lifecycle-aware viewmodel.
     private val viewModel: HomeScreenViewModel by viewModels()
     private lateinit var navigationFunctionLambda: (ResponseItem) -> Unit
+    //
     private lateinit var recyclerViewAdapter: MyRecyclerViewAdapter
 
 
@@ -38,9 +40,13 @@ class HomeScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Pass the argument in the starting fragment
         navigationFunctionLambda = { findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
         recyclerViewAdapter = MyRecyclerViewAdapter(navigationFunction = navigationFunctionLambda)
 
+        // LifecycleMode : Use lifecycleScope when you want coroutines to be tied to the lifecycle of an Activity or Fragment.
+        // The coroutines are automatically canceled when the LifecycleOwner (Activity or Fragment) is destroyed.
+        // launch: This is used for fire-and-forget coroutines where you don't need to return a result.
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
 
@@ -49,6 +55,10 @@ class HomeScreenFragment : Fragment() {
                 }
             }
         }
+        // ensures that the collection starts when the lifecycle
+        //reaches the STARTED state and stops when it falls below STARTED, automatically
+        //restarting the collection each time the lifecycle returns to STARTED, which helps prevent
+        //unnecessary updates and potential memory leaks.
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -59,6 +69,7 @@ class HomeScreenFragment : Fragment() {
             }
         }
 
+        //  get a view reference to the recyclerview and attach the adapter to it.
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = recyclerViewAdapter
     }
 }
