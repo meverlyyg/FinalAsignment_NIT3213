@@ -75,6 +75,21 @@
             app:layout_constraintTop_toBottomOf="@+id/popularAttractionText1"
             tools:text="More details are available" />
 
+        <TextView
+            android:id="@+id/descriptionText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="159dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemDestinationtext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
 
         <com.google.android.material.button.MaterialButton
