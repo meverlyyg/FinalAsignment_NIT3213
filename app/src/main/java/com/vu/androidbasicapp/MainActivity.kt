@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         Log.d("nit3213", "onCreate: ")
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        val newFragment = LoginFragment() // Replace YourFragment with your fragment class
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, newFragment)
+        fragmentTransaction.commit()
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

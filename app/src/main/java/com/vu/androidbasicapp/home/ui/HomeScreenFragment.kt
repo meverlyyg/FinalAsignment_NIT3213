@@ -25,9 +25,8 @@ class HomeScreenFragment : Fragment() {
     // to let the Android Jetpack libraries’ viewModels() function to create a lifecycle-aware viewmodel.
     private val viewModel: HomeScreenViewModel by viewModels()
     private lateinit var navigationFunctionLambda: (DetailItem) -> Unit
-    //
     private lateinit var recyclerViewAdapter: MyRecyclerViewAdapter
-
+    private var keypass: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +38,10 @@ class HomeScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            keypass = it.getString("keypass") // Getting the keypass argument
+        }
 
         //Pass the argument in the starting fragment
         navigationFunctionLambda = {findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
