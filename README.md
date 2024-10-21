@@ -43,11 +43,11 @@ Follow the steps below to build the application from source:
     
 3. Build the Project
 
-Once the project has been opened and synced:
+Once the project has been opened and synced: 
 
 	1.	Go to Build > Make Project (or press Ctrl+F9).
 	2.	Ensure that the build completes successfully with no errors.
-
+ 
 How to Run the App
 
 	1.	Connect a physical Android device or launch an Android emulator.
