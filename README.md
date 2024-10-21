@@ -1,70 +1,56 @@
 Travel Destination App
 
-This Android app allows users to explore various travel destinations, displaying key information about each destination, such as the best season to visit, popular attractions, and a brief description. The app is designed to provide a smooth user experience, integrating various Android development best practices, including RecyclerView for displaying lists and API integration for fetching data dynamically.
+The Travel Destination App is an Android application that allows users to explore different travel destinations, providing information such as the best season to visit, popular attractions, and a detailed description of each destination. Users can navigate between the dashboard and detailed screens to view destination summaries and detailed information.
 
 Features
 
-	•	Login Screen: Secure login interface to authenticate users.
-	•	Dashboard: Displays a list of travel destinations with a summary (destination, country, best season).
-	•	Detail Screen: Provides detailed information about a selected destination, including popular attractions and a full description.
-	•	API Integration: Fetches destination data from a remote server.
-	•	Responsive UI: Adapts to different screen sizes using Material 3 design principles.
-	•	Smooth Navigation: Uses Android’s Navigation Component for seamless transitions between screens.
+	•	Dashboard: Displays a list of travel destinations, showing key details such as the destination name and country.
+	•	Detail Screen: Provides detailed information for a selected destination, including the best season, popular attractions, and description.
+	•	Navigation: Easy navigation between the dashboard and detail screens using Android’s navigation component.
+
+Prerequisites
+
+Before building and running the application, ensure that the following are installed:
+
+	•	Android Studio (latest stable version recommended)
+	•	Java Development Kit (JDK) version 11 or higher
+	•	Gradle (comes bundled with Android Studio)
+	•	Internet connection (for downloading dependencies)
 
 Technologies Used
 
 	•	Programming Language: Kotlin
-	•	UI Framework: Jetpack Compose / XML (depending on your implementation)
-	•	API Handling: Retrofit for network requests and Moshi for JSON parsing
-	•	Data Management: RecyclerView for displaying travel destinations and ViewModel for managing UI-related data
-	•	UI Navigation: Android Navigation Component for managing app navigation
-	•	Design: Material 3 design principles for consistent and modern UI components
-	•	Version Control: Git (recommended tool: SourceTree)
+	•	Android SDK: Minimum SDK 21, Target SDK 33
+	•	Libraries:
+	•	Navigation Component: To handle navigation between the dashboard and detail screens.
+	•	RecyclerView: For displaying a list of destinations on the dashboard.
+	•	Retrofit: To handle API requests (if applicable to your project).
+	•	Moshi: For JSON parsing.
+	•	Material Design 3: For UI elements following modern Android design guidelines.
 
-Screens
+How to Build the App
 
-	1.	Login Screen:
-	•	Allows users to log in with their credentials.
-	•	Validates input and provides feedback for invalid login attempts.
-	2.	Dashboard Screen:
-	•	Displays a list of travel destinations in a RecyclerView.
-	•	Summaries include the destination name, country, and the best season to visit.
-	3.	Detail Screen:
-	•	Shows detailed information about the selected travel destination.
-	•	Includes the destination’s description and popular attractions.
+Follow the steps below to build the application from source:
 
-Data Model
+1. Clone the Repository :  https://github.com/meverlyyg/FinalAsignment_NIT3213.git
 
-The app uses a DetailItem model for travel destination data, with fields such as:
+2. Open the Project in Android Studio
 
-	•	destination: The name of the travel destination.
-	•	country: The country where the destination is located.
-	•	bestSeason: The best season to visit.
-	•	popularAttraction: A notable attraction in the destination.
-	•	description: A detailed description of the destination.
+	1.	Open Android Studio.
+	2.	From the Welcome screen, click on Open an Existing Project.
+	3.	Navigate to the cloned travel-destination-app directory and select it.
+	4.	Let Android Studio sync the project and download necessary dependencies.
+    
+3. Build the Project
 
- Example API Response (JSON) : 
-{
-  "destination": "Paris",
-  "country": "France",
-  "bestSeason": "Spring",
-  "popularAttraction": "Eiffel Tower",
-  "description": "A beautiful city with rich history and culture."
-}
+Once the project has been opened and synced:
 
-Setup and Installation
+	1.	Go to Build > Make Project (or press Ctrl+F9).
+	2.	Ensure that the build completes successfully with no errors.
 
-To run the app locally, follow these steps:
+How to Run the App
 
-	1.	Clone the repository: https://github.com/meverlyyg/FinalAsignment_NIT3213.git
-
- 	2.	Open in Android Studio: Launch Android Studio and open the cloned project.
-	3.	API Setup: Ensure that the API endpoint for fetching travel data is correctly configured in your Retrofit instance.
-	4.	Run the app: Connect your Android device or emulator and click “Run” in Android Studio.
-
-Development Notes
-
-	•	Navigation: The app uses a BottomNavigationView for switching between screens (e.g., Dashboard, Profile).
-	•	Fragments: The Dashboard and Profile views are managed via fragments.
-	•	Material 3: The app’s UI follows Material 3 guidelines, but customization may be necessary depending on your app’s design needs.
-	•	Version Control: Follow best practices for Git branching (e.g., feature branches for new features).
+	1.	Connect a physical Android device or launch an Android emulator.
+	2.	Click Run > Run ‘app’ (or press Shift+F10).
+	3.	Select your device or emulator from the device chooser window.
+	4.	The app will be installed and launched on the selected device.
