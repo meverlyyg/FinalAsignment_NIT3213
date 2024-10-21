@@ -32,7 +32,7 @@ How to Build the App
 
 Follow the steps below to build the application from source:
 
-1. Clone the Repository : ""
+1. Clone the Repository : "https://github.com/meverlyyg/FinalAsignment_NIT3213.git"
 2. Open the Project in Android Studio
 
 	1.	Open Android Studio.
