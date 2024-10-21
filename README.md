@@ -56,7 +56,7 @@ Setup and Installation
 
 To run the app locally, follow these steps:
 
-	1.	Clone the repository:
+	1.	Clone the repository: https://github.com/meverlyyg/FinalAsignment_NIT3213.git
 
  	2.	Open in Android Studio: Launch Android Studio and open the cloned project.
 	3.	API Setup: Ensure that the API endpoint for fetching travel data is correctly configured in your Retrofit instance.
