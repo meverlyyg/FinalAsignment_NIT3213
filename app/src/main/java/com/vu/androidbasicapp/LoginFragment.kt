@@ -42,6 +42,7 @@ class LoginFragment : Fragment() {
 
         // Observe loginResult from the ViewModel
         // Set up the login button click listener
+        // Using 'Toast' pop-up message that appears at the bottom of the screen (by default).
         loginButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
