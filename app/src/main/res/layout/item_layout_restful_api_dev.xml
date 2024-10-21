@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:backgroundTint="#c7ecee">
+    android:backgroundTint="#F6EFBD">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:layout_marginBottom="16dp">
 
         <TextView
-            android:id="@+id/itemNametext"
+            android:id="@+id/itemDestinationtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -25,31 +25,72 @@
             android:textColor="#303F9F"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Name" />
+            tools:text="Destination:" />
 
         <TextView
-            android:id="@+id/itemIdText"
+            android:id="@+id/CountryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text=""
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="#303F9F"
-            app:layout_constraintStart_toStartOf="@id/itemNametext"
-            app:layout_constraintTop_toBottomOf="@id/itemNametext"
-            tools:text="ID: 2" />
+            app:layout_constraintStart_toStartOf="@+id/itemDestinationtext"
+            app:layout_constraintTop_toBottomOf="@+id/itemDestinationtext"
+            tools:text="Country: " />
 
         <TextView
-            android:id="@+id/detailsText"
+            android:id="@+id/bestSeasonText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/CountryText"
+            app:layout_constraintTop_toBottomOf="@+id/CountryText"
+            tools:text="Best Season: " />
+
+        <TextView
+            android:id="@+id/popularAttractionText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintStart_toStartOf="@+id/bestSeasonText1"
+            app:layout_constraintTop_toBottomOf="@+id/bestSeasonText1"
+            tools:text="Popular Attraction: " />
+
+        <TextView
+            android:id="@+id/MoreDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/more_details_are_available"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="#00796B"
-            app:layout_constraintStart_toStartOf="@id/itemIdText"
-            app:layout_constraintTop_toBottomOf="@id/itemIdText"
+            app:layout_constraintStart_toStartOf="@+id/popularAttractionText1"
+            app:layout_constraintTop_toBottomOf="@+id/popularAttractionText1"
             tools:text="More details are available" />
+
+        <TextView
+            android:id="@+id/descriptionText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="159dp"
+            android:text=""
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="#303F9F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemDestinationtext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/navigationButton"
@@ -58,11 +99,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:cornerRadius="8dp"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="#A2D2DF"
             android:text="@string/show_data"
-            app:layout_constraintBottom_toBottomOf="@id/detailsText"
+            app:layout_constraintBottom_toBottomOf="@+id/MoreDetailText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/detailsText" />
+            app:layout_constraintTop_toTopOf="@+id/MoreDetailText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

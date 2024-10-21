@@ -3,7 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/HomeScreenFragment">
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.vu.androidbasicapp.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_HomeScreenFragment"
+            app:destination="@id/HomeScreenFragment" />
+        <argument
+            android:name="keypass"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/HomeScreenFragment"
@@ -14,6 +27,7 @@
             android:id="@+id/action_homeScreenFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.vu.androidbasicapp.DetailFragment"
@@ -21,11 +35,14 @@
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="detail"
-            app:argType="com.vu.androidbasicapp.home.data.ResponseItem" />
+            app:argType="com.vu.androidbasicapp.home.data.DetailItem" />
+        <!-- Safe-args: pass the data to destination fragment-->
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.vu.androidbasicapp.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
 </navigation>
+

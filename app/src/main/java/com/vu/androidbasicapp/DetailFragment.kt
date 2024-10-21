@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.vu.androidbasicapp.home.data.DetailItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
-    private val arguments: DetailFragmentArgs by navArgs()
+    // Receive the Arguments in from the fragment
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,17 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.screenTitle).text = arguments.detail.toString()
-    }
+        val detailItem = args.detail
+
+        // Display the detailItem information on this screen
+        view.findViewById<TextView>(R.id.destinationText).text = " Destination:  ${detailItem.destination}"
+        view.findViewById<TextView>(R.id.CountryTextView).text = " Country:  ${detailItem.country}"
+        view.findViewById<TextView>(R.id.bestSeasonText).text = " Best Season:  ${detailItem.bestSeason}"
+        view.findViewById<TextView>(R.id.popularAttractionText).text = " Popular Attraction:  ${detailItem.popularAttraction}"
+        view.findViewById<TextView>(R.id.descriptionText).text = " Description:  ${detailItem.description}"
+
+
+        }
 }
+
+

@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class RestfulApiDevRetrofitClient @Inject constructor() {
 
-    private val BASE_URL = "https://api.restful-api.dev/"
+    private val BASE_URL = "https://nit3213-api-h2b3-latest.onrender.com/"
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -20,6 +20,8 @@ class RestfulApiDevRetrofitClient @Inject constructor() {
         .addInterceptor(logging)
         .build()
 
+    //Retrofit can automatically convert JSON responses into Java objects (and vice versa) using
+    //converters like Gson or Moshi. This eliminates the need for manual parsing
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
     private val retrofit = Retrofit.Builder()
