@@ -60,6 +60,16 @@ dependencies {
     // Hilt dependencies
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    //Unit Tests
+    testImplementation("io.mockk:mockk:1.13.12") // Core MockK library for local unit tests
+    testImplementation("io.mockk:mockk-android:1.13.12") // Android-specific MockK for local unit tests
+    testImplementation("io.mockk:mockk-agent:1.13.12") // MockK agent for advanced mocking (e.g., static methods)
+    testImplementation("junit:junit:4.13.2") // JUnit for local unit tests
+// Instrumented test dependencies (run on an Android device or emulator)
+    androidTestImplementation("androidx.test.ext:junit:1.1.3") // AndroidX JUnit for instrumented tests
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+
 }
 
 // Allow references to generated code 
